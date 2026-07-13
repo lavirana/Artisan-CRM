@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ContactsManager;
 use App\Livewire\CompaniesManager;
+use App\Livewire\DealKanban;
 
 Route::view('/', 'welcome');
 
@@ -21,4 +22,5 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/contacts', ContactsManager::class)->name('contacts.index');
     Route::get('/companies', CompaniesManager::class)->name('companies.index');
+    Route::get('/pipeline', DealKanban::class)->name('deals.kanban');
 });
