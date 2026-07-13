@@ -4,7 +4,7 @@
 # Project Summary Overview
 We created a functional, secure, and reactive Custom Customer Relationship Management (CRM) application. Instead of relying on heavy frontend frameworks, we used Laravel combined with Livewire, which allows us to write interactive interfaces using simple PHP code.
 
-Screenshot 2026-07-13 at 5.51.40 PM.png
+
 
 # Part 1: System Foundations
 
