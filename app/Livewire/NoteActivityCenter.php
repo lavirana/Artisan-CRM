@@ -61,7 +61,7 @@ class NoteActivityCenter extends Component
 
         // If a file is bundled into the request, dispatch it to private storage disk
         if ($this->attachment) {
-            $filePath = $this->attachment->store('crm-attachments', 'private');
+            $filePath = $this->attachment->store('crm-attachments', 'local');
             $fileName = $this->attachment->getClientOriginalName();
         }
 
@@ -87,11 +87,12 @@ class NoteActivityCenter extends Component
     public function downloadFile($noteId)
     {
         $note = Note::findOrFail($noteId);
-
-        if ($note->file_path && Storage::disk('private')->exists($note->file_path)) {
-            return Storage::disk('private')->download($note->file_path, $note->file_name);
+    
+        // Change 'private' to 'local' in both places here:
+        if ($note->file_path && Storage::disk('local')->exists($note->file_path)) {
+            return Storage::disk('local')->download($note->file_path, $note->file_name);
         }
-
+    
         session()->flash('error', 'Requested attachment could not be located on disk layers.');
     }
 

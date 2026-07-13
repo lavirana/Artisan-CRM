@@ -6,12 +6,13 @@ use App\Livewire\CompaniesManager;
 use App\Livewire\DealKanban;
 use App\Livewire\TaskManager;
 use App\Livewire\NoteActivityCenter;
+use App\Livewire\Dashboard;
 
 Route::view('/', 'welcome');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+//Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::get('/dashboard', Dashboard::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
