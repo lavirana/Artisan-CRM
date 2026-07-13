@@ -9,6 +9,7 @@ use App\Models\Note;
 use App\Models\Contact;
 use App\Models\Deal;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\ProcessActivityLog;
 
 class NoteActivityCenter extends Component
 {
@@ -73,6 +74,17 @@ class NoteActivityCenter extends Component
             'deal_id' => $this->deal_id ?: null,
             'user_id' => auth()->id(),
         ]);
+
+        $note = Note::create([
+            'content' => $this->content,
+            'file_path' => $filePath,
+            'file_name' => $fileName,
+            'contact_id' => $this->contact_id ?: null,
+            'deal_id' => $this->deal_id ?: null,
+            'user_id' => auth()->id(),
+        ]);
+
+        ProcessActivityLog::dispatch($note); // Pushes processing to background instantly!
 
         // Reset the form fields safely
         $this->content = '';

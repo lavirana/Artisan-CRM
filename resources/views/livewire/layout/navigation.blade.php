@@ -18,7 +18,8 @@ $logout = function (Logout $logout) {
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                      <!--<x-application-logo class="block h-9 w-auto fill-current text-gray-800" />-->
+                      <h1>CRM</h1>
                     </a>
                 </div>
 
@@ -26,6 +27,21 @@ $logout = function (Logout $logout) {
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
+                        {{ __('Contacts') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('deals.kanban')" :active="request()->routeIs('deals.*')">
+                        {{ __('Pipeline') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.*')">
+                        {{ __('Tasks') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('notes.index')" :active="request()->routeIs('notes.*')">
+                        {{ __('Activity Center') }}
                     </x-nav-link>
                 </div>
             </div>
