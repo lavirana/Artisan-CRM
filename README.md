@@ -7,6 +7,11 @@ We created a functional, secure, and reactive Custom Customer Relationship Manag
 
 <img width="1298" height="778" alt="Screenshot 2026-07-13 at 5 51 40 PM" src="https://github.com/user-attachments/assets/ce468814-907e-4634-abb0-e932647637d8" />
 
+<img width="1440" height="778" alt="Screenshot 2026-07-13 at 8 31 56 PM" src="https://github.com/user-attachments/assets/d3b6c911-66bb-46fc-b046-00d130331319" />
+
+<img width="1366" height="671" alt="Screenshot 2026-07-13 at 8 33 32 PM" src="https://github.com/user-attachments/assets/1e74e4c6-c9c0-427e-9a36-3bedd7abd754" />
+
+
 # Part 1: System Foundations
 
 ## Step 1 — Setup & Initialization
